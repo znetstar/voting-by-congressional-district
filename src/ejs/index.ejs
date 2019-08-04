@@ -1,0 +1,98 @@
+<% function svgMap(name) { %>
+<div class="map-wrapper">
+    <svg data-map="<%= name %>"></svg>
+</div>
+<% } %>
+<% function count(dem, rep) { %>
+<span class="count">
+    <span class="dem"><%= dem %></span> | 
+    <span class="rep"><%= rep %></span>
+</span>
+<% } %>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <p>Exploring voting by Congressional District</p>
+                    <br/>
+                        <small> 
+                        Zachary Boyd - Summer 2019 
+                        <br/>
+                        <a href="https://github.com/znetstar/voting-by-congressional-district">Source is available on GitHub</a>
+                    </small>
+                </section>
+                <section data-slide-fn="wta" data-fresh-map>
+                    <p>
+                        Most states use a Winner Takes All system for allocating electoral votes.
+                        That means the candidate winning the majority of the popular vote within the state
+                        wins <em>all</em> of the state's electoral votes.
+                    </p>
+
+                    <% svgMap("district") %>
+                </section>
+                <section data-slide-fn="ne-me" data-fresh-map>
+                    <p>
+                        Nebraska and Maine are two notable exceptions, they award votes by Congressional District,
+                        and award the two remaining votes to the statewide majority winner. 
+
+                    </p>
+
+                    <% svgMap("district") %>
+                </section>
+                <section data-slide-fn="ne-me-zoom" data-fresh-map>
+                    <p> 
+                        Taking a closer look at Nebraska and Maine, you can see how district voting adds nuance to the vote count.
+                    </p>
+
+                    <% svgMap("district") %>
+                </section>
+                <section>
+                    If the whole country switched to district voting the electoral landscape would look remarkably different.
+                </section>
+                <section>
+                    From this
+                </section>
+                <section data-slide-fn="wta" data-fresh-map >
+                    <p><%= count(232, 306) %></p>
+                    <% svgMap("district") %>
+                </section>
+                <section>
+                    To this
+                </section>
+                <section data-slide-fn="cd" data-fresh-map>
+                    <p><%= count(248, 290) %></p>
+                    <% svgMap("district") %>
+                </section>
+                <section data-slide-fn="tx" data-fresh-map>
+                    <p>
+                        Texas would look a lot less red
+                        <br/>
+                        <%= count(14, 24) %>
+                    </p>
+
+                    <% svgMap("district") %>
+                </section>
+                <section data-slide-fn="ny" data-fresh-map>
+                    <p>
+                        New York would look a lot less blue
+                        <br/>
+                        <%= count(20, 9) %>
+                    </p>
+
+                    <% svgMap("district") %>
+                </section>
+                <section>
+                   <p>
+                    End.
+                   </p>
+                </section>
+			</div>
+		</div>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html> 

@@ -1,0 +1,54 @@
+@import "./normalize.scss";
+@import "../../node_modules/reveal.js/css/reveal.scss";
+@import "../../node_modules/reveal.js/css/theme/source/white.scss";
+
+body, section {
+    font-family: 'EB Garamond', serif;
+}
+
+.count {
+    .dem {
+        color: blue;
+    }
+    .rep {
+        color: red;
+    }
+}
+
+.slides section {
+    svg[data-map] {
+        width: 100%;
+        height: 100%;
+    }
+    
+    &[data-map-big] {
+        svg {
+            transform: scale(1.25);
+        }
+    }
+
+    .map-wrapper {
+        height:100%;
+        
+        svg[data-map="district"] {
+            width: 100%;
+            height: 60%;
+
+            background: white;
+
+            path {
+                // fill: white;
+                &.highlight {
+                    stroke-opacity: 1 !important;
+                    stroke: white !important;
+                    stroke-width: 2px !important;
+                }
+            }
+
+            #Dividing_line {
+                display: none;
+            }
+
+        }
+    }
+}

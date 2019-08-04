@@ -1,0 +1,38 @@
+{
+  "name": "voting-by-congressional-district",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dist": "grunt dist",
+    "build": "grunt build",
+    "watch": "grunt watch",
+    "start": "node server.js"
+  },
+  "description": "The is a slideshow about voting by Congressional District in the Electoral College.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/znetstar/voting-by-congressional-district"
+  },
+  "author": "Zachary Boyd <zachary@zacharyboyd.nyc>",
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "browserify": "^16.3.0",
+    "csv-parse": "^4.4.3",
+    "ejs": "^2.6.2",
+    "fs-extra": "^8.1.0",
+    "grunt": "^1.0.4",
+    "grunt-browserify": "^5.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.0.2",
+    "jquery": "^3.4.1",
+    "load-grunt-tasks": "^5.1.0",
+    "node-sass": "^4.12.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7",
+    "reveal.js": "^3.8.0",
+    "velocity-animate": "^1.5.2"
+  }
+}
