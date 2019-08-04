@@ -676,5 +676,6 @@ Public License instead of this License.  But first, please read
 Data on US election results by Congressional District was obtained from http://bit.ly/2Km68Qf a property owned by Kos Media, LLC.
 Data on US election results by state was obtained from http://bit.ly/2YKQSWg and was compiled by the Election Data and Science Lab at the Massachusetts Institute of Technology.
 Map of the United States by Congressional District (us-map-by-district.svg) was obtained from http://bit.ly/31cZt1G, credit goes to Wikimedia Commons user MB298.
+Economic/population data from Economic and Population data obtained from https://www.census.gov/mycd - The United States Census Bureau.
 
 The remainder of this project is copyright (c) 2019 Zachary Boyd <zachary@zacharyboyd.nyc> and is licensed under the GNU GPLv3. 

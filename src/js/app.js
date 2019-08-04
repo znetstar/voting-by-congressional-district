@@ -43,8 +43,6 @@ function rgbToHex(r, g, b) {
 
 
     function assignColorToDistrictWTA(districtName) {
-        if (!districtData[districtName])
-            debugger
         let { trump, clinton } = districtData[districtName];
 
         let r = 0, g = 0, b = 0, a;
@@ -56,6 +54,30 @@ function rgbToHex(r, g, b) {
             b = 255;
 
             a = (clinton-trump)*2;
+        }
+        
+        if (a < 0.15)
+            a = 0.15;
+
+        return selectByDistrict(districtName)
+            .velocity({
+                fill: rgbToHex(r,g,b),
+                'stroke-opacity': a,
+                'fill-opacity': a
+            }, {
+                duration: 1000,
+                easing: 'easeInSine'
+            });
+    }
+
+    function assignColorToDistrictPovLine(districtName) {
+        let { trump, clinton, percentageFamiliesBelowPovertyLine } = districtData[districtName];
+
+        let r = 0, g = 0, b = 0, a = percentageFamiliesBelowPovertyLine/100;
+        if (trump > clinton) {
+            r = 255;
+        } else {
+            b = 255;
         }
         
         if (a < 0.15)
@@ -129,6 +151,12 @@ function rgbToHex(r, g, b) {
         return stateData[stateName].districts.map((district) => assignColorToDistrictWTA(district.district));
     }
 
+    function assignColorsToDistrictsInStatePV(stateName) {
+        if (stateName === 'DC') return;
+
+        return stateData[stateName].districts.map((district) => assignColorToDistrictPovLine(district.district));
+    }
+
     window.isolate = isolate
 
     const fns = {
@@ -198,6 +226,11 @@ function rgbToHex(r, g, b) {
                 translateY: -100
             });
         },
+        'pv': function () {
+            for (const stateName in stateData) {
+                assignColorsToDistrictsInStatePV(stateName);
+            }
+        }
     }
 
     const existingMaps = {};

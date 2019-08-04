@@ -26,6 +26,16 @@
                         <a href="https://github.com/znetstar/voting-by-congressional-district">Source is available on GitHub</a>
                     </small>
                 </section>
+                <section>
+                    <p>
+                        <div>Politics</div>
+                    </p>
+                </section>
+                <section>
+                    <p>
+                        <small>The darker the color indicates a greater share of the vote for that party's candidate</small>
+                    </p>
+                </section>
                 <section data-slide-fn="wta" data-fresh-map>
                     <p>
                         Most states use a Winner Takes All system for allocating electoral votes.
@@ -83,6 +93,22 @@
                         <br/>
                         <%= count(20, 9) %>
                     </p>
+
+                    <% svgMap("district") %>
+                </section>
+                <section>
+                    <p>
+                        Economics
+                    </p>
+                </section>
+                <section data-slide-fn="pv" data-fresh-map>
+                    <p>
+                        Below are the election results in relation to the percentage of families below the poverty line.
+                    </p>
+                    <p>
+                        <small>The darker the color indicates a higher share of the population below the poverty line.</small>
+                    </p>
+
 
                     <% svgMap("district") %>
                 </section>
